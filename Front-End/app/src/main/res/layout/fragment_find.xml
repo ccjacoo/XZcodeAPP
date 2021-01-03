@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#20616161"
+        android:gravity="center"
+        android:text="亲爱的同学们，本页面还没规划好，\n初步打算是挂同学们的博客链接或者是github。\n所以我先放上自己的博客：http://6par.top/"
+        android:textColor="#4CAF50"
+        android:textSize="24sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

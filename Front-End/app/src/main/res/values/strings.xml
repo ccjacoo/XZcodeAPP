@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">计算机协会</string>
+    <string name="account">账号</string>
+    <string name="plesase_input_account">请输入手机号</string>
+    <string name="login">登 录</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="password">密码</string>
+    <string name="plesase_input_password">请输入密码</string>
+    <string name="go_to_register">去注册</string>
+    <string name="iv_project_icon">项目图标</string>
+    <string name="tv_register">计算机协会会员注册 :)</string>
+    <string name="tv_phone">手机号:</string>
+    <string name="et_phone">请输入手机号</string>
+    <string name="bt_get_code">获取验证码</string>
+    <string name="tv_code">验证码:</string>
+    <string name="et_code">请输入正确的验证码</string>
+    <string name="tv_name">真实姓名:</string>
+    <string name="et_name">请输入真实姓名</string>
+    <string name="tv_classes">班级:</string>
+    <string name="et_classes">请输入班级(专业+班级)</string>
+    <string name="tv_qq">QQ:</string>
+    <string name="et_qq">请输入QQ号</string>
+    <string name="tv_stunum">学号:</string>
+    <string name="et_stunum">请输入学号</string>
+    <string name="tv_password">密码:</string>
+    <string name="et_password">请输入密码</string>
+    <string name="et_password2">确认密码</string>
+    <string name="bt_register">提交注册</string>
+    <string name="call_forgetPass">请联系工作人员重置密码（Q:570791563） QAQ</string>
+    <string name="call_article">+Q:570791563 欢迎联系我们投稿文章嗷</string>
+    <string name="find_article">请输入您想要搜索的关键字 ^_^</string>
+    <string name="xzcode_intro">浙江师范大学行知学院计算机协会成立于2012年5月，是行知学院第一个计算机专业的协会，是一个培养学生计算机编程实践能力，为参加浙江省大学生计算机相关竞赛培养人才的一个青年社团。本协会有三大特色：注重会员培训、提高同学实践能力、鼓励学生积极参加各种课题和竞赛提高科研能力。在娱乐与学习并存的模式中，协会吸引更多的电脑爱好者加入，互相学习，互相借鉴，不但有利于提高我们的计算机知识，且能够增添大学业余生活的多样性！
+    本社团旨在：为我校参加浙江省计算机相关竞赛选拔和培养人才；为校内众大计算机爱好者们提供交流平台；提升学生计算机知识水平，积累竞赛经验，丰富学生课外生活。本社团的宗旨：兴趣至上，以赛促学。</string>
+    <string name="edit"><u>编辑资料</u></string>
+
+</resources>

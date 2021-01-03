@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.heuet.android.logindemo.dao.UserDOMapper">
+
+  <resultMap id="BaseResultMap" type="edu.heuet.android.logindemo.dataobject.UserDO">
+    <id     column="id" jdbcType="INTEGER" property="id" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="stunum" jdbcType="VARCHAR" property="stunum" />
+    <result column="classes" jdbcType="VARCHAR" property="classes" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, realname,classes, telephone, stunum, qq
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByTelephone" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where telephone = #{telephone,jdbcType=VARCHAR}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="edu.heuet.android.logindemo.dataobject.UserDO"
+  keyProperty="id" useGeneratedKeys="true">
+    insert into user_info (id,telephone,realname,stunum,classes,qq)
+    values (#{id,jdbcType=INTEGER}, #{telephone,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{stunum,jdbcType=VARCHAR},
+       #{classes,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR})
+  </insert>
+
+  <!-- 需要手动指定  keyProperty="id" useGeneratedKeys="true" -->
+  <!-- insertSelective和单纯的insert相比，前者更有优势 -->
+  <!-- 因为，如果没有指定对应字段，则会使用设计数据库时的默认字段 -->
+  <!-- 而我们在设计数据库时，将默认字段都not null -->
+  <!-- 这样对Java程序友好一些 -->
+  <insert id="insertSelective" parameterType="edu.heuet.android.logindemo.dataobject.UserDO"
+    keyProperty="id" useGeneratedKeys="true">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="realname != null">
+        realname,
+      </if>
+      <if test="stunum != null">
+        stunum,
+      </if>
+      <if test="classes != null">
+        classes,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="stunum != null">
+        #{stunum,jdbcType=VARCHAR},
+      </if>
+      <if test="classes != null">
+        #{classes,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="edu.heuet.android.logindemo.dataobject.UserDO">
+    update user_info
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="stunum != null">
+        stunum = #{stunum,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="classes != null">
+        classes = #{classes,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="edu.heuet.android.logindemo.dataobject.UserDO">
+    update user_info
+    set name = #{name,jdbcType=VARCHAR},
+      classes = #{classes,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      stunum = #{stunum,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
